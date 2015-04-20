@@ -10,8 +10,13 @@ import java.util.Scanner;
 public class IntroducingMethods {
 
     public static void main(String[] args) {
-
         // TODO: Fill in the body with your code
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String string = scanner.nextLine();
+        int count = getWordCount(string);
+        if ( = "");
+        System.out.println("Your string has " + count + "words.");
     }
 
     // Given a Scanner, prompt the user for a String.  If the user enters an empty
@@ -31,5 +36,7 @@ public class IntroducingMethods {
     // words will be separated by exactly one space.
     private static int getWordCount(String input) {
         // TODO: Fill in the body
+        int count = 0;
+        
     }
 }
