@@ -15,10 +15,13 @@ public class IntroducingMethods {
         System.out.println("Enter a string: ");
         String string = scanner.nextLine();
         int count = getWordCount(string);
-        if ( = "");
+        if ("".equals(string)){
+            System.out.println("Error! Please reenter a string: ");
+        }
+        else{
         System.out.println("Your string has " + count + "words.");
     }
-
+    }
     // Given a Scanner, prompt the user for a String.  If the user enters an empty
     // String, report an error message and ask for a non-empty String.  Return the
     // String to the calling program.
