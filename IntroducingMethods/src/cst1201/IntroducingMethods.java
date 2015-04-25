@@ -26,17 +26,19 @@ public class IntroducingMethods {
      */
     private static String getInputString(Scanner inScanner) {
         String s = inScanner.nextLine();
+        System.out.print("which word would you like to get :(begin with 0) ");
+        int n = inScanner.nextInt();
         if (s.length() > 0) {
             getWordCount(s);
             getFirstWord(s);
-             } 
-        else {
+            getWord(s, n);
+        } else {
             System.out.println("ERROR - string must not be empty.");
             System.out.print("Enter a string: ");
             s = inScanner.nextLine();
             getWordCount(s);
             getFirstWord(s);
-            
+            getWord(s, n);
         }
 
         return s;
@@ -75,7 +77,7 @@ public class IntroducingMethods {
 
         }
 
-        System.out.println("Your string has " + counter + " words in it.");
+        System.out.print("Your string has " + counter + " in it.");
         return counter;
 
     }
@@ -87,6 +89,11 @@ public class IntroducingMethods {
         return input;
     }
 
-  
-    
+    private static String getWord(String input, int n) {
+        String arr[] = input.split(" ");
+        String word = arr[n];
+        System.out.println("The word is " + word);
+        return input;
+
+    }
 }
