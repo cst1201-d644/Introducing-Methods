@@ -12,6 +12,7 @@ public class IntroducingMethods {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
         System.out.print("Enter a string: ");
+
         getInputString(keyboard);
     }
 
@@ -27,12 +28,15 @@ public class IntroducingMethods {
         String s = inScanner.nextLine();
         if (s.length() > 0) {
             getWordCount(s);
-        } else {
+            getFirstWord(s);
+             } 
+        else {
             System.out.println("ERROR - string must not be empty.");
             System.out.print("Enter a string: ");
             s = inScanner.nextLine();
             getWordCount(s);
-
+            getFirstWord(s);
+            
         }
 
         return s;
@@ -71,9 +75,18 @@ public class IntroducingMethods {
 
         }
 
-        System.out.println( counter );
+        System.out.println("Your string has " + counter + " words in it.");
         return counter;
 
     }
 
+    private static String getFirstWord(String input) {
+        String arr[] = input.split(" ");
+        String firstWord = arr[0];
+        System.out.println("The first word is :" + firstWord);
+        return input;
+    }
+
+  
+    
 }
