@@ -5,7 +5,7 @@ public class IntroducingMethods {
 
     public static void main(String[] args) {
         // TODO: Fill in the body with your code
-        System.out.print("Enter a string: ");
+        System.out.print("Enter the string: ");
 
         Scanner keyboard = new Scanner(System.in);
         getInputString(keyboard);
@@ -17,8 +17,8 @@ public class IntroducingMethods {
 
         while (input.length() == 0) {
 
-            System.out.println("ERROR - string must not be empty.");
-            System.out.println("Enter a string: ");
+            System.out.println("ERROR - string cannot be empty.");
+            System.out.println("Enter the string: ");
 
             input = inScanner.nextLine();
 
@@ -30,7 +30,7 @@ public class IntroducingMethods {
 
         return input;
     }
- // Given a String return the number of words in the String. A word is a sequence of
+    // Given a String return the number of words in the String. A word is a sequence of
     // characters with no spaces. Write this method so that the function call:
     // int count = getWordCount("The quick brown fox jumped");
     // results in count having a value of 5. You will call this method from the main method.
@@ -42,26 +42,30 @@ public class IntroducingMethods {
 
         int wordCount = input.split(" ").length;
 
-        System.out.println("Your string has " + wordCount + " words in it");
+        System.out.println("The string has " + wordCount + " words in it");
 
         return wordCount;
     }
 
+    private static String getFirstWord(String input) {
 
- private static String getFirstWord(String input) {
+        if (input.indexOf(' ') > -1) {
 
-if (input.indexOf(' ') > -1) {
+            System.out.println("Get the first word: " + input.substring(0, input.indexOf(' ')));
+            return input.substring(0, input.indexOf(' '));
 
- System.out.println("The first word is: " + input.substring(0, input.indexOf(' ')));
- return input.substring(0, input.indexOf(' '));
+        } else {
 
- } 
-else {
+            System.out.println("Get the first word: " + input);
+            return input;
+        }
 
- System.out.println("The first word is: " + input);
- return input;
- }
+    }
 
- }
+    private static String getWord(String input, int n) {
+        String arr[] = input.split(" ");
+        String word = arr[n];
+        System.out.println("The word you got is: " + word);
+        return word;
+    }
 }
-
