@@ -3,7 +3,7 @@ package cst1201;
 import java.util.Scanner;
 
 /**
- * This program will count the word as a string
+ * This program will count the word and print the first word from a string
  *
  * @author Niaz Morshed & Devya Gurung
  */
@@ -30,10 +30,12 @@ public class IntroducingMethods {
             input = inScanner.nextLine();
 
             getWordCount(input);
+            getFirstWord(input);
 
         }
 
         getWordCount(input);
+        getFirstWord(input);
 
         return input;
 
@@ -46,6 +48,21 @@ public class IntroducingMethods {
         System.out.println("Your string has " + wordCount + " words in it");
 
         return wordCount;
+
+    }
+
+    private static String getFirstWord(String input) {
+
+        if (input.indexOf(' ') > -1) {
+
+            System.out.println("The first word is: " + input.substring(0, input.indexOf(' ')));
+            return input.substring(0, input.indexOf(' '));
+
+        } else {
+
+            System.out.println("The first word is: " + input);
+            return input;
+        }
 
     }
 
