@@ -3,15 +3,20 @@ package cst1201;
 import java.util.Scanner;
 
 /**
- * TODO: Description of your class.
+ * Given a string, the program will return the number of words in the string.
+ * It will also then return the first word of that string along with the 'nth'
+ * word of the string.
  *
- * @author TODO: Your name here.
+ * @author TODO: Winnie Wu & Kenny Tsang
  */
 public class IntroducingMethods {
 
     public static void main(String[] args) {
 
-        // TODO: Fill in the body with your code
+        System.out.print("Enter a string: ");
+        Scanner scanner = new Scanner(System.in);  
+        
+        getInputString(scanner);
     }
 
     /**
@@ -22,9 +27,18 @@ public class IntroducingMethods {
      * @return The resulting String from the user.
      */
     private static String getInputString(Scanner inScanner) {
-        // TODO: Fill in the body
-
-        // NOTE: Do not declare a Scanner in the body of this method.
+        
+        String inputString = inScanner.nextLine();
+        
+        if (inputString.length() > 0)
+            getWordCount(inputString);
+        else {
+            System.out.println("ERROR - string must not be empty.");
+            System.out.print("Enter a string: ");
+            inputString = inScanner.nextLine();
+            getWordCount(inputString);
+    }
+       return inputString;
     }
 
     /**
@@ -39,6 +53,13 @@ public class IntroducingMethods {
      * @return The number of words in the String. Each word is separated by a single space.
      */
     private static int getWordCount(String input) {
-        // TODO: Fill in the body
+        
+        int count = input.split(" ").length;
+        System.out.println("Your string has " + count + " words in it.");
+        
+        return count;
     }
-}
+    }        
+    
+        
+    
