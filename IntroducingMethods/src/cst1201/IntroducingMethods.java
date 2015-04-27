@@ -46,4 +46,22 @@ public class IntroducingMethods {
 
         return wordCount;
     }
+
+
+ private static String getFirstWord(String input) {
+
+if (input.indexOf(' ') > -1) {
+
+ System.out.println("The first word is: " + input.substring(0, input.indexOf(' ')));
+ return input.substring(0, input.indexOf(' '));
+
+ } 
+else {
+
+ System.out.println("The first word is: " + input);
+ return input;
+ }
+
+ }
 }
+
