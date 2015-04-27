@@ -3,15 +3,18 @@ package cst1201;
 import java.util.Scanner;
 
 /**
- * TODO: Description of your class.
+ * Description of your class.
  *
- * @author TODO: Francisco Latacela and Goutom Kundu .
+ * @author Francisco Latacela and Goutam Kundu .
  */
 public class IntroducingMethods {
 
     public static void main(String[] args) {
 
-        // TODO: Fill in the body with your code
+        //Fill in the body with your code
+        System.out.println("Please Enter a String: ");
+        Scanner sc = new Scanner(System.in);
+        getInputString(sc);
     }
 
     /**
@@ -23,9 +26,15 @@ public class IntroducingMethods {
      * @return The resulting String from the user.
      */
     private static String getInputString(Scanner inScanner) {
-        // TODO: Fill in the body
-
-        // NOTE: Do not declare a Scanner in the body of this method.
+        //Fill in the body
+        String input = inScanner.nextLine();
+        while (input.length() == 0) {
+            System.out.println("You have entered an empty String, Please enter a non-empty String");
+            System.out.println("Please Enter a String: ");
+            input = inScanner.nextLine();
+        }
+        getWordCount(input);
+        return input;
     }
 
     /**
@@ -42,6 +51,27 @@ public class IntroducingMethods {
      * single space.
      */
     private static int getWordCount(String input) {
-        // TODO: Fill in the body
+        //Fill in the body
+        int countingWords = input.split(" ").length;
+
+        System.out.println("Your string contain " + countingWords + " words!");
+        System.out.println("The First Word is: " + firstWordDisplayed(input));
+
+        return countingWords;
+    }
+
+    //It will display the first letter of the string inputted 
+    private static String firstWordDisplayed(String input) {
+        int CountingSpace = 0;
+        char word[] = input.toCharArray();
+        for (int i = 0; i < word.length; i++) {
+            if (word[i] == ' ') {
+                CountingSpace = i;
+                break;
+            }
+        }
+        String firstWord = input.substring(0, CountingSpace);
+        return firstWord;
+
     }
 }
