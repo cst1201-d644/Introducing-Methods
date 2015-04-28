@@ -28,6 +28,7 @@ public class IntroducingMethods {
             System.out.println("Please enter a string: ");
             inputString = inScanner.nextLine();
         }
+        getWordCount(inputString);
         getFirstWord(inputString);
         return inputString;
     }
