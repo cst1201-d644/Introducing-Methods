@@ -3,42 +3,97 @@ package cst1201;
 import java.util.Scanner;
 
 /**
- * TODO: Description of your class.
+ * CST 1201
  *
- * @author TODO: Your name here.
+ * @author JianLang Lin,Ziying Guo
  */
 public class IntroducingMethods {
 
     public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Enter a string: ");
 
-        // TODO: Fill in the body with your code
+        getInputString(keyboard);
     }
 
     /**
-     * Given a Scanner, prompts the user for a String.  If the user enters an empty
-     * String, reports an error message and asks for a non-empty String.  Returns the
-     * String to the calling program.
+     * Given a Scanner, prompts the user for a String. If the user enters an
+     * empty String, reports an error message and asks for a non-empty String.
+     * Returns the String to the calling program.
+     *
      * @param inScanner The Scanner to use to prompt the user.
      * @return The resulting String from the user.
      */
     private static String getInputString(Scanner inScanner) {
-        // TODO: Fill in the body
+        String s = inScanner.nextLine();
+        System.out.print("which word would you like to get :(begin with 0) ");
+        int n = inScanner.nextInt();
+        if (s.length() > 0) {
+            getWordCount(s);
+            getFirstWord(s);
+            getWord(s, n);
+        } else {
+            System.out.println("ERROR - string must not be empty.");
+            System.out.print("Enter a string: ");
+            s = inScanner.nextLine();
+            getWordCount(s);
+            getFirstWord(s);
+            getWord(s, n);
+        }
 
-        // NOTE: Do not declare a Scanner in the body of this method.
+        return s;
     }
 
     /**
-     * Given a String, returns the number of words in the String.  A word is a sequence of 
-     * characters with no spaces.  For example, the method call:
+     * Given a String, returns the number of words in the String. A word is a
+     * sequence of characters with no spaces. For example, the method call:
+     *
      * <pre>
      *      int count = getWordCount("The quick brown fox jumped");
-     * </pre>
-     * results in count having a value of 5. This method should be called from the main method.
-     * For this assignment, you may assume that words will be separated by exactly one space.
+     * </pre> results in count having a value of 5. This method should be called
+     * from the main method. For this assignment, you may assume that words will
+     * be separated by exactly one space.
+     *
      * @param input The String in question.
-     * @return The number of words in the String. Each word is separated by a single space.
+     * @return The number of words in the String. Each word is separated by a
+     * single space.
      */
     private static int getWordCount(String input) {
-        // TODO: Fill in the body
+        int counter = 0;
+        for (int i = 0; i <= input.length() - 1; i++) {
+            if (Character.isLetter(input.charAt(i))) {
+                counter++;
+                for (; i <= input.length() - 1; i++) {
+                    if (input.charAt(i) == ' ') {
+                        counter++;
+                        i++;
+                        while (input.charAt(i) == ' ') {
+                            i++;
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+        System.out.print("Your string has " + counter + " in it.");
+        return counter;
+
+    }
+
+    private static String getFirstWord(String input) {
+        String arr[] = input.split(" ");
+        String firstWord = arr[0];
+        System.out.println("The first word is :" + firstWord);
+        return input;
+    }
+
+    private static String getWord(String input, int n) {
+        String arr[] = input.split(" ");
+        String word = arr[n];
+        System.out.println("The word is " + word);
+        return input;
+
     }
 }
