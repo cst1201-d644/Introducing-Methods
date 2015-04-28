@@ -28,9 +28,12 @@ public class IntroducingMethods {
             System.out.println("Please enter a string: ");
             inputString = inScanner.nextLine();
         }
-        
+        System.out.println("Which word do you want to get? ");
+        int n = inScanner.nextInt();
+
         getWordCount(inputString);
         getFirstWord(inputString);
+        getWord(inputString, n);
 
         return inputString;
     }
@@ -56,4 +59,13 @@ public class IntroducingMethods {
 
         return input;
     }
+
+    private static String getWord(String input, int n) {
+        String array[] = input.split(" ");
+        String word = array[n];
+        System.out.println("The word is: " + word + ", " + n);
+
+        return input;
     }
+
+}
