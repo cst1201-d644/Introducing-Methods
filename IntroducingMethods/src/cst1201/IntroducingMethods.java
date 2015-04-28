@@ -11,24 +11,16 @@ public class IntroducingMethods {
 
     public static void main(String[] args) {
 
-      
     }
-     
-    /**
-     * Given a Scanner, prompts the user for a String. If the user enters an
-     * empty String, reports an error message and asks for a non-empty String.
-     * Returns the String to the calling program.
-     *
-     * @param inScanner The Scanner to use to prompt the user.
-     * @return The resulting String from the user.
-     */
+
     private static String getInputString(Scanner inScanner) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter a string: ");
         String inputString = in.nextLine();
         if (inputString.length() > 0) {
+            System.out.println("you just entered" + inputString);
             return inputString;
-            
+
         } else {
             System.out.println("ERROR - string must not be empty.");
             System.out.print("Enter a string: ");
@@ -36,7 +28,6 @@ public class IntroducingMethods {
         }
     }
 
-    
     private static int getWordCount(String input) {
         int count = 0;
 
@@ -45,16 +36,25 @@ public class IntroducingMethods {
                 count++;
             }
         }
-
+        System.out.println("Amount of word that you entered:"+ count);
         return count;
     }
-    private static String getFirstWord(String input){
-        return input;
+
+    private static String getFirstWord(String input) {
+        if (input.indexOf(' ') > -1) {
+            System.out.println("First word is" +input);
+            return input.substring(0, input.indexOf(' '));
+        } else {
+            return input;
+        }
+
     }
-    private static String getWord(String input, int n){
-        return input;
+
+    private static String getWord(String input, int n) {
         
+       return input;
+        
+
     }
-            
+
 }
-   
