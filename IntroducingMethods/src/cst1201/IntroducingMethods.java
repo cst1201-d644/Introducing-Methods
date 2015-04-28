@@ -28,20 +28,29 @@ public class IntroducingMethods {
             System.out.println("Please enter a string: ");
             inputString = inScanner.nextLine();
         }
-        getWordCount(inputString);
+        getFirstWord(inputString);
         return inputString;
     }
         // Given a String return the number of words in the String.  A word is a sequence of 
-        // characters with no spaces.  Write this method so that the function call:
-        // int count = getWordCount("The quick brown fox jumped");
-        // results in count having a value of 5.  You will call this method from the main method.
-        // For this assignment you may assume that
-        // words will be separated by exactly one space.
-   private static int getWordCount(String input) {
+    // characters with no spaces.  Write this method so that the function call:
+    // int count = getWordCount("The quick brown fox jumped");
+    // results in count having a value of 5.  You will call this method from the main method.
+    // For this assignment you may assume that
+    // words will be separated by exactly one space.
+
+    private static int getWordCount(String input) {
         // TODO: Fill in the body
         int wordCount = input.split(" ").length;
         System.out.println("Your string has " + wordCount + " words in it.");
-        
+
         return wordCount;
-}
+    }
+
+    private static String getFirstWord(String input) {
+        String arr[] = input.split(" ");
+        String firstWord = arr[0];
+        System.out.println("The first word is :" + firstWord);
+        
+        return firstWord;
+    }
 }
