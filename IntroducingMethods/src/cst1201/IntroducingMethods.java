@@ -21,9 +21,7 @@ public class IntroducingMethods {
     // String, report an error message and ask for a non-empty String.  Return the
     // String to the calling program.
     private static String getInputString(Scanner inScanner) {
-        // TODO: Fill in the body
 
-        // NOTE: Do not declare a Scanner in the body of this method.
         String input = inScanner.nextLine();
 
         while (input.length() == 0) {
@@ -38,8 +36,14 @@ public class IntroducingMethods {
 
         }
 
+        System.out.println("PLease indicate the nth word you would like: ");
+
+        int n = inScanner.nextInt();
+
         getWordCount(input);
         getFirstWord(input);
+
+        getWord(input, n);
 
         return input;
 
@@ -70,4 +74,10 @@ public class IntroducingMethods {
 
     }
 
+    private static String getWord(String input, int n) {
+        String arr[] = input.split(" ");
+        String word = arr[n];
+        System.out.println("The word you were looking for:  " + word);
+        return word;
+    }
 }
