@@ -5,13 +5,16 @@ import java.util.Scanner;
 /**
  * TODO: Description of your class.
  *
- * @author TODO: Your name here.
+ * @author TODO: razia and jean.
  */
 public class IntroducingMethods {
 
     public static void main(String[] args) {
 
-        // TODO: Fill in the body with your code
+        System.out.print(" Please enter a string: ");
+
+        Scanner keyboard = new Scanner(System.in);
+        getInputString(keyboard);
     }
 
     // Given a Scanner, prompt the user for a String.  If the user enters an empty
@@ -21,6 +24,22 @@ public class IntroducingMethods {
         // TODO: Fill in the body
 
         // NOTE: Do not declare a Scanner in the body of this method.
+        String input = inScanner.nextLine();
+
+        while (input.length() == 0) {
+
+            System.out.println("ERROR - string must not be empty.");
+            System.out.println(" Please enter a string: ");
+
+            input = inScanner.nextLine();
+
+            getWordCount(input);
+
+        }
+
+        getWordCount(input);
+
+        return input;
     }
 
     // Given a String return the number of words in the String.  A word is a sequence of 
@@ -31,5 +50,11 @@ public class IntroducingMethods {
     // words will be separated by exactly one space.
     private static int getWordCount(String input) {
         // TODO: Fill in the body
+        int wordCount = input.split(" ").length;
+
+        System.out.println("Your string has " + wordCount + " words in it");
+
+        return wordCount;
+
     }
 }
