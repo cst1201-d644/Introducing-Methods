@@ -28,11 +28,16 @@ public class IntroducingMethods {
             System.out.println("Please enter a string: ");
             inputString = inScanner.nextLine();
         }
+        System.out.println("Which word do you want to get? ");
+        int n = inScanner.nextInt();
+
         getWordCount(inputString);
         getFirstWord(inputString);
+        getWord(inputString, n);
+
         return inputString;
     }
-        // Given a String return the number of words in the String.  A word is a sequence of 
+    // Given a String return the number of words in the String.  A word is a sequence of 
     // characters with no spaces.  Write this method so that the function call:
     // int count = getWordCount("The quick brown fox jumped");
     // results in count having a value of 5.  You will call this method from the main method.
@@ -51,7 +56,16 @@ public class IntroducingMethods {
         String arr[] = input.split(" ");
         String firstWord = arr[0];
         System.out.println("The first word is :" + firstWord);
-        
-        return firstWord;
+
+        return input;
     }
+
+    private static String getWord(String input, int n) {
+        String array[] = input.split(" ");
+        String word = array[n];
+        System.out.println("The word is: " + word + ", " + n);
+
+        return input;
+    }
+
 }
