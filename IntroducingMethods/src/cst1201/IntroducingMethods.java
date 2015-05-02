@@ -3,9 +3,9 @@ package cst1201;
 import java.util.Scanner;
 
 /**
- * TODO: Description of your class.
+ * This program allow user to count words from string
  *
- * @author TODO: Your name here.
+ * @author Niaz Morshed and Devya Gurung
  */
 public class IntroducingMethods {
 
@@ -33,6 +33,7 @@ public class IntroducingMethods {
         }
 
         getWordCount(input);
+        getFirstWord(input);
 
         return input;
 
@@ -47,5 +48,21 @@ public class IntroducingMethods {
         return wordCount;
 
     }
+    
+    private static String getFirstWord(String input) {
+
+        if (input.indexOf(' ') > -1) {
+
+            System.out.println("The first word is: " + input.substring(0, input.indexOf(' ')));
+            return input.substring(0, input.indexOf(' '));
+
+        } else {
+
+            System.out.println("The first word is: " + input);
+            return input;
+        }
+    }
+ 
+    
 
 }
