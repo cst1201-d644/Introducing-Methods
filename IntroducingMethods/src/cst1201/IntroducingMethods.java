@@ -3,46 +3,76 @@ package cst1201;
 import java.util.Scanner;
 
 /**
- * TODO: Description of your class.
+ * This program allow user to count words from string
  *
- * @author TODO: Your name here.
+ * @author Niaz Morshed and Devya Gurung
  */
 public class IntroducingMethods {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		// TODO: Fill in the body with your code
-	}
+        // TODO: Fill in the body with your code
+        System.out.print("Enter a string: ");
 
-	/**
-	 * Given a Scanner, prompts the user for a String. If the user enters an
-	 * empty String, reports an error message and asks for a non-empty
-	 * String. Returns the String to the calling program.
-	 *
-	 * @param inScanner The Scanner to use to prompt the user.
-	 * @return The resulting String from the user.
-	 */
-	private static String getInputString(Scanner inScanner) {
-        // TODO: Fill in the body
+        Scanner keyboard = new Scanner(System.in);
+        getInputString(keyboard);
 
-		// NOTE: Do not declare a Scanner in the body of this method.
-	}
+    }
 
-	/**
-	 * Given a String, returns the number of words in the String. A word is
-	 * a sequence of characters with no spaces. For example, the method
-	 * call:
-	 * <pre>
-	 *      int count = getWordCount("The quick brown fox jumped");
-	 * </pre> results in count having a value of 5. This method should be
-	 * called from the main method. For this assignment, you may assume that
-	 * words will be separated by exactly one space.
-	 *
-	 * @param input The String in question.
-	 * @return The number of words in the String. Each word is separated by
-	 * a single space.
-	 */
-	private static int getWordCount(String input) {
-		// TODO: Fill in the body
-	}
+    private static String getInputString(Scanner inScanner) {
+
+        String input = inScanner.nextLine();
+
+        while (input.length() == 0) {
+
+            System.out.println("ERROR - string must not be empty.");
+            System.out.println("Enter a string: ");
+
+            input = inScanner.nextLine();
+
+        }
+
+        getWordCount(input);
+        getFirstWord(input);
+
+        System.out.println("Which number of word you want to get: ");
+        int n = inScanner.nextInt();
+        getWord(input, n);
+
+        return input;
+
+    }
+
+    private static int getWordCount(String input) {
+
+        int wordCount = input.split(" ").length;
+
+        System.out.println("Your string has " + wordCount + " words in it");
+
+        return wordCount;
+
+    }
+
+    private static String getFirstWord(String input) {
+
+        if (input.indexOf(' ') > -1) {
+
+            System.out.println("The first word is: " + input.substring(0, input.indexOf(' ')));
+            return input.substring(0, input.indexOf(' '));
+
+        } else {
+
+            System.out.println("The first word is: " + input);
+            return input;
+        }
+    }
+
+    private static String getWord(String input, int n) {
+
+        String arr[] = input.split(" ");
+        String word = arr[n];
+        System.out.println("The word you search:  " + word);
+        return word;
+    }
+
 }
