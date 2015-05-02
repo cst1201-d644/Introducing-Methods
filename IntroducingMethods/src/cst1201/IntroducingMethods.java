@@ -35,6 +35,10 @@ public class IntroducingMethods {
         getWordCount(input);
         getFirstWord(input);
 
+        System.out.println("Which number of word you want to get: ");
+        int n = inScanner.nextInt();
+        getWord(input, n);
+
         return input;
 
     }
@@ -48,7 +52,7 @@ public class IntroducingMethods {
         return wordCount;
 
     }
-    
+
     private static String getFirstWord(String input) {
 
         if (input.indexOf(' ') > -1) {
@@ -62,7 +66,13 @@ public class IntroducingMethods {
             return input;
         }
     }
- 
-    
+
+    private static String getWord(String input, int n) {
+
+        String arr[] = input.split(" ");
+        String word = arr[n];
+        System.out.println("The word you search:  " + word);
+        return word;
+    }
 
 }
