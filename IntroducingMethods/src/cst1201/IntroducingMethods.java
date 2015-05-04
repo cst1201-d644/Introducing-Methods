@@ -33,7 +33,7 @@ public class IntroducingMethods {
             getFirstWord(s);
             getWord(s, n);
         } else {
-            System.out.println("ERROR - string must not be empty.");
+            System.err.println("ERROR - string must not be empty.");
             System.out.print("Enter a string: ");
             s = inScanner.nextLine();
             getWordCount(s);
@@ -71,13 +71,14 @@ public class IntroducingMethods {
                             i++;
                         }
                     }
+
                 }
 
             }
 
         }
 
-        System.out.print("Your string has " + counter + " in it.");
+        System.out.println("Your string has " + counter + " word(s) in it.");
         return counter;
 
     }
@@ -91,8 +92,13 @@ public class IntroducingMethods {
 
     private static String getWord(String input, int n) {
         String arr[] = input.split(" ");
-        String word = arr[n];
-        System.out.println("The word is " + word);
+        if (n>input.length()||(n<0)){
+            String word = arr[n];
+            System.out.println("The word is " + word);}
+        else 
+            System.err.println("The word is not exit");
+            
+        
         return input;
 
     }
